@@ -4,7 +4,7 @@ import os
 # os.environ["VECTARA_CORPUS_ID"] = getpass.getpass("Vectara Corpus ID:")
 # os.environ["VECTARA_API_KEY"] = getpass.getpass("Vectara API Key:")
 
-print("Read env variables ")
+# print("Read env variables ")
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -24,7 +24,9 @@ vectorstore = Vectara(
                 vectara_api_key=vectara_api_key
             )
 
-vectara = Vectara.from_files(["vbc/value-based-health-care.pdf"])
+# vectara = Vectara.from_files(["vbc/value-based-health-care.pdf"])
+
+vectara = Vectara.from_files(["apm/success_apm.pdf"])
 
 summary_config = {"is_enabled": True, "max_results": 5, "response_lang": "eng"}
 retriever = vectara.as_retriever(
@@ -39,9 +41,14 @@ def get_summary(documents):
     return documents[-1].page_content
 
 
-query_str = "what is Transforming Clinical Practice Initiative?"
+query_str = "which states are having success in implementing Alternate Payment models. Give details."
+
+print("Query: ", query_str)
+print("")
+
 
 print ( "Answer,no pre-processing:", (retriever | get_summary).invoke(query_str))
+print("")
 # print("Answer,no pre-processing:", str(get_summary))
 
 # (retriever | get_sources).invoke(query_str)
@@ -53,7 +60,7 @@ llm = ChatOpenAI(temperature=0)
 mqr = MultiQueryRetriever.from_llm(retriever=retriever, llm=llm)
 
 print( "Multi Query Retriever: ", (mqr | get_summary).invoke(query_str))
-
+print("")
 
 
 # (mqr | get_sources).invoke(query_str)
