@@ -1,0 +1,6 @@
+python-dotenv
+langchain
+langchain_community
+langchain_openai
+llama_index
+together
