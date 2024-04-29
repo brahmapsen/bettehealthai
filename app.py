@@ -28,7 +28,7 @@ def initialize_vectara():
 
 def read_pdf_vectara():
     # vectara = Vectara.from_files(["vbc/value-based-health-care.pdf"])
-    vectara = Vectara.from_files(["apm/success_apm.pdf"])
+    vectara = Vectara.from_files(["data/success_apm.pdf"])
     summary_config = {"is_enabled": True, "max_results": 1, "response_lang": "eng"}
     retriever = vectara.as_retriever(
         search_kwargs={"k": 1, "summary_config": summary_config}
