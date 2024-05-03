@@ -1,6 +1,4 @@
-## This project recommends appropriate Alternate Payment Models that ties payment to health outcome while
-
-## trying to reduce cost which may sound an oxymoron but worth travelling in that innovative lane
+## This project recommends appropriate Alternate Payment Models that ties payment to health outcome while trying to reduce cost. This may sound like an oxymoron but worth travelling in that innovative lane to bring these sometimes conflicting aim to fruition.
 
 ## create a virtual environment "env"
 
