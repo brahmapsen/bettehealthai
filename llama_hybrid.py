@@ -87,8 +87,20 @@ query_engine = RetrieverQueryEngine.from_args(
 )
 
 ## First request
-response = query_engine.query("List successful Alternative Payment Models?")
-print(response)
+qry1 = "List successful Alternative Payment Models?"
+print("\n")
+print("Query 1 :", qry1)
+response = query_engine.query(qry1)
+print("Answer for Query 1 using hybrid Retriver and Post processing:", response)
+print("\n")
+
+
+qry2 = "What is the most successful Alternative Payment Model?"
+print("\n")
+print("Query 2:", qry2)
+response = query_engine.query(qry2)
+print("Answer for Query 2 using hybrid Retriver and Post processing:", response)
+print("\n")
 
 
 ###Initialize Context Relevance Checks
@@ -140,8 +152,8 @@ tru_recorder = TruLlama(query_engine,
     feedbacks=[f_context_relevance_bm25,f_context_relevance_vector, f_context_relevance_hybrid, f_context_relevance_hybrid_filtered]
     )
 
-with tru_recorder as recording:
-    response = query_engine.query("Which states are successful in implementing Value Based Care?")
+# with tru_recorder as recording:
+#     response = query_engine.query("Which states are successful in implementing Value Based Care?")
 
 # with tru_recorder as recording:
 #     try:
