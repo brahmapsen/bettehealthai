@@ -3,4 +3,5 @@ storage/
 .env
 __pycache__/
 apm/
-vbc/
+pdfs/
+copy_Dockerfile

@@ -1,8 +1,16 @@
 python-dotenv
-langchain
-langchain_community
-langchain_openai
-llama_index
-together
+# langchain
+# langchain_community
+# langchain_openai
+#together
 #unstructured==0.5.6
+openai==1.14.3
+trulens_eval==0.24.0 
+llama_index==0.10.11 
+llama-index-readers-file 
+llama-index-llms-openai 
+llama-index-retrievers-bm25 
+pypdf 
+torch 
+sentence-transformers
 chainlit
